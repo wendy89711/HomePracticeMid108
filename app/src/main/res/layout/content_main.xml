@@ -9,12 +9,98 @@
     tools:showIn="@layout/activity_main">
 
     <TextView
+        android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="user name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.024" />
+
+    <EditText
+        android:id="@+id/ed_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintStart_toStartOf="@+id/username"
+        app:layout_constraintTop_toBottomOf="@+id/username" />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Email"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="@+id/ed_name"
+        app:layout_constraintTop_toBottomOf="@+id/ed_name" />
+
+    <EditText
+        android:id="@+id/ed_mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="@+id/email"
+        app:layout_constraintTop_toBottomOf="@+id/email" />
+
+    <TextView
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="password"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="@+id/ed_mail"
+        app:layout_constraintTop_toBottomOf="@+id/ed_mail" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="SIGN UP"
+        app:layout_constraintStart_toStartOf="@+id/ed_password"
+        app:layout_constraintTop_toBottomOf="@+id/ed_password" />
+
+    <EditText
+        android:id="@+id/ed_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintStart_toStartOf="@+id/password"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
+
+    <ImageView
+        android:id="@+id/image_noname"
+        android:layout_width="74dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/ed_name"
+        app:layout_constraintStart_toEndOf="@+id/ed_name"
+        app:srcCompat="@drawable/no" />
+
+    <ImageView
+        android:id="@+id/image_nopassword"
+        android:layout_width="74dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/ed_password"
+        app:layout_constraintStart_toEndOf="@+id/ed_password"
+        app:srcCompat="@drawable/no" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
