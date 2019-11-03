@@ -17,23 +17,53 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    private TextView username;
+    private TextView email;
+    private TextView password;
+    private ImageView image_errorname;
+    private ImageView image_errorpassword;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        username = findViewById(R.id.ed_name);
+        email = findViewById(R.id.ed_mail);
+        password = findViewById(R.id.ed_password);
+        image_errorname = findViewById(R.id.image_errorname);
+        image_errorpassword = findViewById(R.id.image_errorpassword);
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                reset();
             }
         });
     }
-
+    public void reset() {
+        Intent intent2 = new Intent(this,MainActivity.class);
+        startActivity(intent2);
+    }
+    public void button(View view) {
+        username.getText();
+        email.getText();
+        password.getText();
+        if (username.length() >= 3 && email.length() != 0 && password.length() >= 6) {
+            Intent intent = new Intent(this,ResultActivity.class); //不熟
+            startActivity(intent);
+        } else if (username.length() < 3) {
+            image_errorname.setVisibility(View.VISIBLE);
+        } else if (email.length() == 0) {
+            new AlertDialog.Builder(MainActivity.this)//不熟
+                    .setTitle("Error")
+                    .setMessage("Email can not be empty.")
+                    .setPositiveButton("OK",null)
+                    .show();
+        } else if (password.length() < 6) {
+            image_errorpassword.setVisibility(View.VISIBLE);
+        }
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

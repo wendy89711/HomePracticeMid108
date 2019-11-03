@@ -14,22 +14,33 @@ import android.view.View;
 import android.widget.TextView;
 
 public class ResultActivity extends AppCompatActivity {
-    TextView result;
+    private TextView result;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        Intent intent = getIntent();//不熟
+        result = findViewById(R.id.result);
+        result.setText("Welcome");
+        new AlertDialog.Builder(ResultActivity.this)
+                .setTitle("Success")
+                .setMessage("Hello world!")
+                .setPositiveButton("JOINUS",null)
+                .show();
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                reset();
+
             }
         });
+    }
+    public void reset() {
+        Intent intent1 = new Intent(this,MainActivity.class);
+        startActivity(intent1);
     }
 
 }

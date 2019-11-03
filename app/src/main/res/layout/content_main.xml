@@ -67,7 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:onClick="butten"
+        android:onClick="button"
         android:text="SIGN UP"
         app:layout_constraintStart_toStartOf="@+id/ed_password"
         app:layout_constraintTop_toBottomOf="@+id/ed_password" />
@@ -83,7 +83,7 @@
         app:layout_constraintTop_toBottomOf="@+id/password" />
 
     <ImageView
-        android:id="@+id/image_noname"
+        android:id="@+id/image_errorname"
         android:layout_width="74dp"
         android:layout_height="56dp"
         android:layout_marginStart="16dp"
@@ -94,7 +94,7 @@
         app:srcCompat="@drawable/no" />
 
     <ImageView
-        android:id="@+id/image_nopassword"
+        android:id="@+id/image_errorpassword"
         android:layout_width="74dp"
         android:layout_height="56dp"
         android:layout_marginStart="16dp"
