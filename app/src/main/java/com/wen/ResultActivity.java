@@ -21,14 +21,7 @@ public class ResultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_result);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        Intent intent = getIntent();
-        result = findViewById(R.id.result);
-        result.setText("Welcome!!");
-        new AlertDialog.Builder(ResultActivity.this)
-                .setTitle("Success")
-                .setMessage("Hello world!")
-                .setPositiveButton("JOIN US",null)
-                .show();
+
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
