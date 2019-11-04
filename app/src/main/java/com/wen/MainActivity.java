@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void button(View view) {
         username.getText();
-        email.getText();
+        email.getText();//想不到輸入搜尋是否有＠的方法
         password.getText();
         if (username.length() >= 3 && email.length() != 0 && password.length() >= 6) {
             Intent intent = new Intent(this,ResultActivity.class); //不熟
