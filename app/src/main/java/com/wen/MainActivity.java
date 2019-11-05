@@ -20,8 +20,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView username;
     private TextView email;
     private TextView password;
-    private ImageView image_errorname;
-    private ImageView image_errorpassword;
+    private ImageView errorname;
+    private ImageView errorpass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
         username = findViewById(R.id.ed_name);
         email = findViewById(R.id.ed_mail);
         password = findViewById(R.id.ed_password);
-        image_errorname = findViewById(R.id.image_errorname);
-        image_errorpassword = findViewById(R.id.image_errorpassword);
+        errorname = findViewById(R.id.image_errorname);
+        errorpass = findViewById(R.id.image_errorpassword);
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,26 +42,16 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     public void reset() {
-        Intent intent2 = new Intent(this,MainActivity.class);
-        startActivity(intent2);
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
     }
     public void button(View view) {
         username.getText();
-        email.getText();//想不到輸入搜尋是否有＠的方法
         password.getText();
+        email.getText();
         if (username.length() >= 3 && email.length() != 0 && password.length() >= 6) {
-            Intent intent = new Intent(this,ResultActivity.class); //不熟
+            Intent intent = new Intent(this,ResultActivity.class);
             startActivity(intent);
-        } else if (username.length() < 3) {
-            image_errorname.setVisibility(View.VISIBLE);
-        } else if (email.length() == 0) {
-            new AlertDialog.Builder(MainActivity.this)//不熟
-                    .setTitle("Error")
-                    .setMessage("Email can not be empty.")
-                    .setPositiveButton("OK",null)
-                    .show();
-        } else if (password.length() < 6) {
-            image_errorpassword.setVisibility(View.VISIBLE);
         }
     }
     @Override
